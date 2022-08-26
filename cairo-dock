@@ -1,0 +1,20 @@
+// Install deps
+sudo apt-get install aptitude git -y
+sudo aptitude install cmake make pkg-config gcc gettext build-essential
+
+// Download gits
+git clone https://github.com/Cairo-Dock/cairo-dock-core.git
+git clone https://github.com/Cairo-Dock/cairo-dock-plug-ins.git
+
+// Compile & Install
+cd cairo-dock-core
+mkdir build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr ## if you want to have debug symbols, simply add this flag : "-DCMAKE_BUILD_TYPE=Debug"
+make -j $(grep -c ^processor /proc/cpuinfo) ## if you have an error, see if you have install all dependences and/or post a new thread on our forum
+sudo make install # as root
+
+cd ../../cairo-dock-plug-ins/
+mkdir build && cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr ## if you want to have debug symbols, simply add this flag : "-DCMAKE_BUILD_TYPE=Debug"
+make -j $(grep -c ^processor /proc/cpuinfo)
+sudo make install ## as root and if you had no errors
