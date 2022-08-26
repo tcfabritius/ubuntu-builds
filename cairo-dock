@@ -1,8 +1,8 @@
-// Install deps
+// Install deps & download gits
 sudo apt-get install aptitude git -y
 sudo aptitude install cmake make pkg-config gcc gettext build-essential
-
-// Download gits
+sudo aptitude install libglib2.0-dev libcairo2-dev librsvg2-dev libdbus-glib-1-dev libxml2-dev libxrender-dev libglu1-mesa-dev libpango1.0-dev libxxf86vm-dev libxtst-dev libxrandr-dev libx11-dev libcurl4-gnutls-dev libgtk-3-dev
+sudo aptitude install libdbusmenu-gtk3-dev libasound2-dev libgnome-menu-3-dev libetpan-dev libxklavier-dev libwebkit-dev libexif-dev libvte-2.90-dev libzeitgeist-dev libido3-0.1-dev libindicator3-dev libsensors4-dev libupower-glib-dev wget curl
 git clone https://github.com/Cairo-Dock/cairo-dock-core.git
 git clone https://github.com/Cairo-Dock/cairo-dock-plug-ins.git
 
